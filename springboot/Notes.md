@@ -63,7 +63,7 @@
 		}
 		
 	}
-	
+		* 
 	@ConfigurationProperties(prefix = "app.datasource")
 	public class DataSourceProperties {
 
@@ -81,7 +81,7 @@
 	app.datasource.password=dev password
 	
 	//For multiple env specific beans abbotate @Profile("development") at calss level. 
-	```
+	```	
 
 #### Auto Configuration
 * Simplicity results from auto configuration based dependecies.
@@ -90,18 +90,18 @@
 * Can write your own  configurations also.
 ##### What is It?	
 * Where to find?
-** spring.factories 
-** @Conditional ... when to load this factory class.
-** run --debug to see report on autoconfiguration
-** Its not magic has method to madness
-** Can exclude Autoconfiguration class and do it manually as per your usecase.
-** Check AutoConfigurationReport.txt
+	* spring.factories 
+	* @Conditional ... when to load this factory class.
+	* run --debug to see report on autoconfiguration
+	* Its not magic has method to madness
+	* Can exclude Autoconfiguration class and do it manually as per your usecase.
+	* Check AutoConfigurationReport.txt
 
 
 #### Web Applications
 * MVC - Model View Controller
 * Other ones:
-** Grails (its spring MVC in desguise)
+	* Grails (its spring MVC in desguise)
 * **Static Content**
 	* CSS / JS / Images / Webjars
 	* use /static folder.
@@ -170,9 +170,42 @@
 	* spring.h2.console.path=/console
 * JPA crud repositories
 * JAP entities
-** Relationship - 1:1, 1:n, n:1 etc.
-* On app start add soem datat to in-memory H2
-** application.properties ... 
-*** spring.datasource.platform=h2
-*** create data-h2.sql  
-*** Spring will run sqls in this file.
+	* Relationship - 1:1, 1:n, n:1 etc.
+
+* How to load data required for app on startup.
+	* On app start add some datat to in-memory H2
+		* application.properties ... 
+			* spring.datasource.platform=h2
+			* create data-h2.sql  
+			* Spring will run sqls in this file.
+		* DataLoaders 
+			* create class with @Service annotation
+			* Autowire necessary repositories
+			* @PostConstruct annotated method to write data using above repositories.
+			* 7_1_DataLoaders.png
+		* @Bean type CommandLineRunner in main class
+			* 8_3_ComamndLineRunner_ToLoadInitialData.PNG
+	* Use @PostConstruct annotation in main class to verify data in this case. (or any other such purspose)
+		* To execute code after app in initialized
+	* Examples: https://github.com/danvega/spring-boot-intro/tree/master/data
+	* Spring Data Projects: https://spring.io/projects/spring-data
+	* JPA ref: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/
+	* JPA query creation: https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
+
+
+
+#### Rest API
+* https verbs
+* http status codes
+* content negotiation 
+	* Using ACCEPT header
+	* Can send req param format=JSON
+* Hypermedia = Spring Data Rest = Spring Data + Rest
+	* Will get REST endpoints without handcoding. Similar to JPA CRUD repositories.
+	* spring-boot-starter-data-rest
+		* Spring WEB MVC
+		* HATEOS - Hypermedia As The Engine Of Application State (Roy Fieldings PHD theses - REST also) 
+		* Jackson 2
+
+#### TODO
+* HandlerInterceptorAdaptor
