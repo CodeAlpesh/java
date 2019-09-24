@@ -1,0 +1,75 @@
+Req: 
+	http://localhost:8080/
+Res:
+	302 http://localhost:8080/login
+	Set-Cookie JSESSIONID=B7D85C6408399193C183F967EB542075; Path=/; HttpOnly
+
+Req:
+	http://localhost:8080/login
+	JSESSIONID=B7D85C6408399193C183F967EB542075
+Res:
+	302
+	Location: https://www.facebook.com/dialog/oauth?client_id=427549407886027&redirect_uri=http://localhost:8080/login&response_type=code&state=7dDDKh
+	
+Req:
+	https://www.facebook.com/dialog/oauth?client_id=427549407886027&redirect_uri=http://localhost:8080/login&response_type=code&state=7dDDKh
+
+Res:
+	302
+	location: https://www.facebook.com/login.php?skip_api_login=1&api_key=427549407886027&kid_directed_site=0&app_id=427549407886027&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D427549407886027%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8080%252Flogin%26response_type%3Dcode%26state%3D7dDDKh%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D8722c271-b4a7-4595-9943-c49089333b59&cancel_url=http%3A%2F%2Flocalhost%3A8080%2Flogin%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3D7dDDKh%23_%3D_&display=page&locale=en_GB
+
+	set-cookie: fr=1PlXedQ0EGnVFkMDr..Bdibdv.dU.AAA.0.0.Bdibdv.AWW53GZH; expires=Wed, 23-Sep-2020 06:27:58 GMT; Max-Age=31535999; path=/; domain=.facebook.com; secure; httponly
+
+
+>>> Enter uid and password
+
+Req:
+	POST https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&next=https%3A%2F%2Fwww.facebook.com%2Fdialog%2Foauth%3Fclient_id%3D427549407886027%26redirect_uri%3Dhttp%253A%252F%252Flocalhost%253A8080%252Flogin%26response_type%3Dcode%26state%3D7dDDKh%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3D8722c271-b4a7-4595-9943-c49089333b59&lwv=100
+
+    Form Data:
+	azoest	2745
+	lsd	AVrwvcGI
+	api_key	427549407886027
+	cancel_url	http://localhost:8080/login?error=access_denied&error_code=200&error_description=Permissions+error&error_reason=user_denied&state=7dDDKh#_=_
+	display	page
+	enable_profile_selector	
+	isprivate	
+	legacy_return	0
+	profile_selector_ids	
+	return_session	
+	skip_api_login	1
+	signed_next	1
+	trynum	1
+	timezone	-330
+	lgndim	eyJ3IjoxNTM2LCJoIjo4NjQsImF3IjoxNTM2LCJhaCI6ODI0LCJjIjoyNH0=
+	lgnrnd	232759_YqGK
+	lgnjs	1569306505
+	email	mailtoalpesh@gmail.com
+	pass	XXXXXXX
+	prefill_contact_point	mailtoalpesh@gmail.com
+	prefill_source	browser_dropdown
+	prefill_type	contact_point
+	first_prefill_source	browser_dropdown
+	first_prefill_type	contact_point
+	had_cp_prefilled	true
+	had_password_prefilled	false
+	ab_test_data	AAAAAAPPPA/ffPAAAAPAAAAAAfAAAAAAAAAAAAAAAARW/WAAAAICAC	
+	
+Res:
+	302
+	location: https://www.facebook.com/dialog/oauth?client_id=427549407886027&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin&response_type=code&state=7dDDKh&ret=login&fbapp_pres=0&logger_id=8722c271-b4a7-4595-9943-c49089333b59&ext=1569310511&hash=Aeb_gmQGuMwXBb9Y
+	
+	
+Req :
+   https://www.facebook.com/dialog/oauth?client_id=427549407886027&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin&response_type=code&state=7dDDKh&ret=login&fbapp_pres=0&logger_id=8722c271-b4a7-4595-9943-c49089333b59&ext=1569310511&hash=Aeb_gmQGuMwXBb9Y
+Res:
+	302
+	location: http://localhost:8080/login?code=AQAPiQiv7s2NRro6vphJMyZAlPQU1LuUPhs_133Dh9wxxwz2FxzYQ70v4hPi1fy9aBU812RRu1rpMvISrcVWRLblp7gpp5dyb0Dr4BorHH1kpuAqaOLdqZDoK5K3EiF9xMgSMIrNWy7bbmV3xjEscdCgb4xQDJ6yAnVytiAJbpXhqQ6raYMguYfQEnxE_jE_c21BzgnWvjaYknPnBKDWXd2FTtyKTbg-tSWqW6aKJNaUXqCmnEps5GknLomUNBa6P565wjOGQzMhXJcOj1zqaZfvKf8Ibbp5i5ALro446O4dFWRHvSSIap_zkEFxOdXVmX5nQW905fe9VM1dn_u2oXOfhF9CnCX6kMkSdsWVhTNxXA&state=7dDDKh#_=_
+	
+Req:
+   http://localhost:8080/login?code=AQAPiQiv7s2NRro6vphJMyZAlPQU1LuUPhs_133Dh9wxxwz2FxzYQ70v4hPi1fy9aBU812RRu1rpMvISrcVWRLblp7gpp5dyb0Dr4BorHH1kpuAqaOLdqZDoK5K3EiF9xMgSMIrNWy7bbmV3xjEscdCgb4xQDJ6yAnVytiAJbpXhqQ6raYMguYfQEnxE_jE_c21BzgnWvjaYknPnBKDWXd2FTtyKTbg-tSWqW6aKJNaUXqCmnEps5GknLomUNBa6P565wjOGQzMhXJcOj1zqaZfvKf8Ibbp5i5ALro446O4dFWRHvSSIap_zkEFxOdXVmX5nQW905fe9VM1dn_u2oXOfhF9CnCX6kMkSdsWVhTNxXA&state=7dDDKh
+   Cookie: fr=1PlXedQ0EGnVFkMDr.AWXbTKj2lcJOLKssQSt0674KnXk.Bdibdv.dU.AAA.0.0.Bdibkd.AWWVI96z; sb=b7eJXStPAfYBduPN6HxWCyWx; datr=b7eJXRQMLLdqYLFuY2UFk6fa; wd=697x728; dpr=1.25; c_user=100004206912433; xs=5%3AwOcR8XQbHH9pnQ%3A2%3A1569306909%3A16015%3A9295
+	
+Res:
+	302 Location: http://localhost:8080/
+	
