@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -23,7 +22,6 @@ import org.springframework.security.oauth2.client.OAuth2ClientContext;
 import org.springframework.security.oauth2.client.OAuth2RestTemplate;
 import org.springframework.security.oauth2.client.filter.OAuth2ClientAuthenticationProcessingFilter;
 import org.springframework.security.oauth2.client.filter.OAuth2ClientContextFilter;
-import org.springframework.security.oauth2.client.token.grant.code.AuthorizationCodeResourceDetails;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 import org.springframework.security.web.FilterChainProxy;
 import org.springframework.security.web.SecurityFilterChain;
@@ -70,29 +68,23 @@ public class SocialApplication extends WebSecurityConfigurerAdapter  {
 	}
 
 	private Filter ssoFilter() {
-		
 		CompositeFilter filter = new CompositeFilter();
 		List<Filter> filters = new ArrayList<>();
-		
-		OAuth2ClientAuthenticationProcessingFilter facebookFilter = new OAuth2ClientAuthenticationProcessingFilter("/login/facebook");
-		OAuth2RestTemplate facebookTemplate = new OAuth2RestTemplate(facebook(), oauth2ClientContext);
-		facebookFilter.setRestTemplate(facebookTemplate);
-		UserInfoTokenServices tokenServices = new UserInfoTokenServices(facebookResource().getUserInfoUri(), facebook().getClientId());
-		tokenServices.setRestTemplate(facebookTemplate);
-		facebookFilter.setTokenServices(tokenServices);
-		filters.add(facebookFilter);
-		
-		OAuth2ClientAuthenticationProcessingFilter githubFilter = new OAuth2ClientAuthenticationProcessingFilter("/login/github");
-		OAuth2RestTemplate githubTemplate = new OAuth2RestTemplate(github(), oauth2ClientContext);
-		githubFilter.setRestTemplate(githubTemplate);
-		tokenServices = new UserInfoTokenServices(githubResource().getUserInfoUri(), github().getClientId());
-		tokenServices.setRestTemplate(githubTemplate);
-		githubFilter.setTokenServices(tokenServices);
-		filters.add(githubFilter);
-		
+		filters.add(filter("/login/facebook", facebook()));
+		filters.add(filter("/login/github", github()));
 		filter.setFilters(filters);
 		return filter;
-	}	
+	}
+	
+	private OAuth2ClientAuthenticationProcessingFilter filter(String url, ClientResources client) {
+		OAuth2ClientAuthenticationProcessingFilter facebookFilter = new OAuth2ClientAuthenticationProcessingFilter(url);
+		OAuth2RestTemplate facebookTemplate = new OAuth2RestTemplate(client.getClient(), oauth2ClientContext);
+		facebookFilter.setRestTemplate(facebookTemplate);
+		UserInfoTokenServices tokenServices = new UserInfoTokenServices(client.getResource().getUserInfoUri(), client.getClient().getClientId());
+		tokenServices.setRestTemplate(facebookTemplate);
+		facebookFilter.setTokenServices(tokenServices);
+		return facebookFilter;
+	}
 		 
 	@Bean
 	public FilterRegistrationBean<OAuth2ClientContextFilter> oauth2ClientFilterRegistration(OAuth2ClientContextFilter filter) {
@@ -103,28 +95,16 @@ public class SocialApplication extends WebSecurityConfigurerAdapter  {
 	}
 
 	 @Bean
-	 @ConfigurationProperties("facebook.client")
-	 public AuthorizationCodeResourceDetails facebook() {
-		 return new AuthorizationCodeResourceDetails();
-	 }
-	  
-	 @Bean
-	 @ConfigurationProperties("facebook.resource")
-	 public ResourceServerProperties facebookResource() {
-		 return new ResourceServerProperties();
+	 @ConfigurationProperties("facebook")
+	 public ClientResources facebook() {
+		 return new ClientResources();
 	 }
 
 	 @Bean
-	 @ConfigurationProperties("github.client")
-	 public AuthorizationCodeResourceDetails github() {
-	 	return new AuthorizationCodeResourceDetails();
+	 @ConfigurationProperties("github")
+	 public ClientResources github() {
+		 return new ClientResources();
 	 }
-
-	 @Bean
-	 @ConfigurationProperties("github.resource")
-	 public ResourceServerProperties githubResource() {
-	 	return new ResourceServerProperties();
-	 }	 
 	 
 	 @EventListener(ApplicationReadyEvent.class)
 	 public void getFilters() {
