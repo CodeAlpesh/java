@@ -1,0 +1,1081 @@
+MIME-Version: 1.0
+Content-Location: file:///C:/2E681270/template-app.htm
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html xmlns:o=3D"urn:schemas-microsoft-com:office:office"
+xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+xmlns=3D"http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3DProgId content=3DOneNote.File>
+<meta name=3DGenerator content=3D"Microsoft OneNote 15">
+<link id=3DMain-File rel=3DMain-File href=3Dtemplate-app.htm>
+<link rel=3DFile-List href=3D"template-app_files/filelist.xml">
+</head>
+
+<body lang=3Den-US style=3D'font-family:Calibri;font-size:11.0pt'>
+
+<div style=3D'direction:ltr;border-width:100%'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:0in;width:12.9944in'>
+
+<div style=3D'direction:ltr;margin-top:0in;margin-left:.25in;width:3.9868in=
+'>
+
+<p style=3D'margin:0in;font-family:"Calibri Light";font-size:20.0pt'>Spring=
+boot-angular
+integration</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.0409in;margin-left:.25in;width:2.34=
+09in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:#767676'>=
+Tuesday,
+January 7, 2020</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:10.0pt;color:#767676'>=
+4:41
+PM</p>
+
+</div>
+
+<div style=3D'direction:ltr;margin-top:.4326in;margin-left:0in;width:4.7798=
+in'>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+style=3D'mso-spacerun:yes'> </span>Directory of
+D:\devel\java\spring-boot-angular-integration\<span style=3D'background:#FF=
+FF99'>templateapp</span></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>01/07/2020<span
+style=3D'mso-spacerun:yes'>  </span>05:12 PM<span style=3D'mso-spacerun:ye=
+s'>   
+</span>&lt;DIR&gt;<span style=3D'mso-spacerun:yes'>          </spa=
+n>.</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>01/07/2020<span
+style=3D'mso-spacerun:yes'>  </span>05:12 PM<span style=3D'mso-spacerun:ye=
+s'>   
+</span>&lt;DIR&gt;<span style=3D'mso-spacerun:yes'>          </spa=
+n>..</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>01/07/2020<span
+style=3D'mso-spacerun:yes'>  </span>02:08 PM<span style=3D'mso-spacerun:ye=
+s'>   
+</span><span style=3D'background:#FF99CC'>&lt;DIR&gt;<span
+style=3D'mso-spacerun:yes'>          </span>app-backend </span></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>01/07/2020<span
+style=3D'mso-spacerun:yes'>  </span>03:05 PM<span style=3D'mso-spacerun:ye=
+s'>   
+</span><span style=3D'background:#FF99CC'>&lt;DIR&gt;<span
+style=3D'mso-spacerun:yes'>          </span>app-frontend </span></=
+p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>01/06/2020<span
+style=3D'mso-spacerun:yes'>  </span>06:42 PM<span
+style=3D'mso-spacerun:yes'>               </span>680<span sty=
+le=3D'background:#FFFF99'>
+pom.xml</span></p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+style=3D'mso-spacerun:yes'>               </span>1 File(s)<sp=
+an
+style=3D'mso-spacerun:yes'>            </span>680 bytes</p>
+
+<p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+style=3D'mso-spacerun:yes'>               </span>4 Dir(s)<span
+style=3D'mso-spacerun:yes'>  </span>348,082,884,608 bytes free</p>
+
+</div>
+
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 cols=3D7 valign=3Dtop sty=
+le=3D'direction:
+ ltr;border-collapse:collapse;border-width:0pt;margin-top:.5631in;margin-le=
+ft:
+ 0in;width:12.9944in'>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.25in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:4.3965in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2402in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2381in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.125in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:6.4173in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1.327in;
+  height:1px;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:4.0159in;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td colspan=3D2 valign=3Dtop style=3D'vertical-align:top;margin:0in;paddi=
+ng:0pt;
+  width:4.6465in;height:4.0159in'>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'font-weight:bold;background:#FFFF99'>/</span><span style=3D'back=
+ground:
+  #FFFF99'>templateapp</span><span style=3D'font-weight:bold;background:#FF=
+FF99'>/</span><span
+  style=3D'font-weight:bold;background:#99CCFF'>pom.xml</span></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;?x=
+ml
+  version=3D&quot;1.0&quot; encoding=3D&quot;UTF-8&quot;?&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;pr=
+oject<span
+  style=3D'mso-spacerun:yes'>  </span>… &gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;groupId&gt;com.comp.codename&lt;/groupId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;artifactId&gt;demo-parent&lt;/artifactId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'><span style=3D'background:#FFFF99'>&lt;packaging&gt;</span><span
+  style=3D'font-weight:bold;background:#FFFF99'>pom</span><span style=3D'ba=
+ckground:
+  #FFFF99'>&lt;/packaging&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;name&gt;springboot-angular-integration&lt;/name&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;description&gt;Demo project for Spring Boot and
+  angular&lt;/description&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;properties&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;java.version&gt;1.8&lt;/java.version&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;/properties&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'background:#FFFF99'><span style=3D'mso-spacerun:yes'>   
+  </span>&lt;modules&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'background:#FFFF99'><span style=3D'mso-spacerun:yes'>     �=
+� 
+  </span>&lt;module&gt;app-backend&lt;/module&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'background:#FFFF99'><span style=3D'mso-spacerun:yes'>     �=
+� 
+  </span>&lt;module&gt;app-frontend&lt;/module&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'background:#FFFF99'><span style=3D'mso-spacerun:yes'>   
+  </span>&lt;/modules&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;/p=
+roject&gt;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2402in;
+  height:4.0159in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2381in;
+  height:4.0159in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.125in;
+  height:4.0159in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td colspan=3D2 rowspan=3D3 valign=3Dtop style=3D'vertical-align:top;marg=
+in:0in;
+  padding:0pt;width:7.7444in;height:15.7847in'>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'background:#99CCFF'>/</span><span style=3D'background:#FFFF99'>t=
+emplateapp</span><span
+  style=3D'background:#99CCFF'>/app-frontend/pom.xml</span></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;?x=
+ml
+  version=3D&quot;1.0&quot; encoding=3D&quot;UTF-8&quot;?&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;pr=
+oject<span
+  style=3D'mso-spacerun:yes'>  </span>… &gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;groupId&gt;com.comp.codename&lt;/groupId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;artifactId&gt;demo-frontend&lt;/artifactId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'><span style=3D'background:#FFFF99'>&lt;packaging&gt;</span><span
+  style=3D'font-weight:bold;background:#FFFF99'>jar</span><span style=3D'ba=
+ckground:
+  #FFFF99'>&lt;/packaging&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;name&gt;demo-frontend&lt;/name&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;description&gt;Client app&lt;/description&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>    </span>&lt;properties&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>       
+  </span>&lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.source=
+Encoding&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>       
+  </span>&lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reportin=
+g.outputEncoding&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>       
+  </span>&lt;java.version&gt;1.8&lt;/java.version&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>    </span>&lt;/properties&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;build&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>        </span>&lt;plugins&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>            </span>&lt;plugin&gt;</=
+p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>               
+  </span>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>               
+  </span>&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>            </span>&lt;/plugin&gt;<=
+/p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>            </span>&lt;plugin&gt;</=
+p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span><span st=
+yle=3D'background:#FFFF99'>&lt;groupId&gt;com.github.eirslett&lt;/groupId&g=
+t;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span><span st=
+yle=3D'background:#FFFF99'>&lt;artifactId&gt;frontend-maven-plugin&lt;/arti=
+factId&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>               
+  </span>&lt;version&gt;1.8.0&lt;/version&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span>&lt;conf=
+iguration&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;<span
+  style=3D'background:#FFFF99'>nodeVersion</span>&gt;<span style=3D'backgro=
+und:
+  #FFFF99'>v12.14.0</span>&lt;/<span style=3D'background:#FFFF99'>nodeVersi=
+on</span>&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span>&lt;/con=
+figuration&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span>&lt;exec=
+utions&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;id&gt;install-npm&lt;/id&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+    
+  </span>&lt;goal&gt;install-node-and-npm&lt;/goal&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;/goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;/execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;id&gt;npm-install&lt;/id&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+    
+  </span>&lt;goal&gt;npm&lt;/goal&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;/goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;/execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;id&gt;npm-build&lt;/id&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+    
+  </span>&lt;goal&gt;npm&lt;/goal&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;/goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;configuration&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+    
+  </span>&lt;arguments&gt;run-script build&lt;/arguments&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;/configuration&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;/execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;id&gt;npm-test&lt;/id&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+    
+  </span>&lt;goal&gt;npm&lt;/goal&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;/goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;configuration&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+    
+  </span>&lt;arguments&gt;run-script e2e&lt;/arguments&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;/configuration&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;phase&gt;test&lt;/phase&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;/execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span>&lt;/exe=
+cutions&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>            </span>&lt;/plugin&gt;<=
+/p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;plugin&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span>&lt;arti=
+factId&gt;<span
+  style=3D'background:#E5E0EC'>maven-resources-plugin</span>&lt;/artifactId=
+&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span>&lt;exec=
+utions&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;id&gt;copy-build&lt;/id&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;phase&gt;prepare-package&lt;/phase&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+     </span><span
+  style=3D'background:#E5E0EC'>&lt;goal&gt;copy-resources&lt;/goal&gt;</spa=
+n></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;/goals&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+ </span>&lt;configuration&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+     </span>&lt;!-- Webjars
+  expect resources in /META-INF/resources folder in a jar file. --&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+     </span><span
+  style=3D'background:#E5E0EC'>&lt;outputDirectory&gt;${basedir}</span><span
+  style=3D'background:#FDEADA'>/target/classes/META-INF/resource</span><span
+  style=3D'background:#E5E0EC'>s&lt;/outputDirectory&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+     </span>&lt;resources&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+         </span><span
+  style=3D'background:#E5E0EC'>&lt;resource&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+             </span><span
+  style=3D'background:#E5E0EC'>&lt;directory&gt;dist/</span><span
+  style=3D'background:#FDEADA'>client-app</span><span style=3D'background:#=
+E5E0EC'>&lt;/directory&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+         </span><span
+  style=3D'background:#E5E0EC'>&lt;/resource&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       =
+    
+  </span>&lt;/resources&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                       
+  </span>&lt;/configuration&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                    </span>=
+&lt;/execution&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>                </span>&lt;/exe=
+cutions&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>            </span>&lt;/plugin&gt;<=
+/p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>        </span>&lt;/plugins&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'>    </span>&lt;/build&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;/p=
+roject&gt;</p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:5.984in;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.25in;
+  height:5.984in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:4.3965in;
+  height:5.984in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2402in;
+  height:5.984in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2381in;
+  height:5.984in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.125in;
+  height:5.984in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:5.784in;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.25in;
+  height:5.784in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td colspan=3D2 rowspan=3D3 valign=3Dtop style=3D'vertical-align:top;marg=
+in:0in;
+  padding:0pt;width:4.6368in;height:11.684in'>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'font-weight:bold'>Interesting Note:</span></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:em=
+bed;
+   margin-top:0in;margin-bottom:0in'>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>The Client applicatio=
+n is
+       packaged as webjar. The artifactId should always be lowercased. </sp=
+an><a
+       href=3D"https://www.webjars.org/contributing"><span style=3D'font-fa=
+mily:
+       Calibri;font-size:11.0pt'>https://www.webjars.org/contributing</span=
+></a></li>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>Spring-boot is
+       autoconfigured to handle webjars. </span></li>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>Content/Resources wit=
+hin </span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>META-INF/resour=
+ces</span><span
+       style=3D'font-family:Calibri;font-size:11.0pt'> will be<span
+       style=3D'mso-spacerun:yes'>  </span>served by spring-boot.</span></=
+li>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>Change the angular bu=
+ild
+       output in </span><span style=3D'font-family:"Courier New";font-size:=
+11.0pt'>angular.json
+       -&gt; outputPath</span><span style=3D'font-family:Calibri;font-size:=
+11.0pt'>
+       By default app name appears in output path </span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>dist/appname</s=
+pan><span
+       style=3D'font-family:Calibri;font-size:11.0pt'><span
+       style=3D'mso-spacerun:yes'>  </span>Exa: </span><span style=3D'font=
+-family:
+       "Courier New";font-size:11.0pt;background:#E5E0EC'>dist/</span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt;background:#FDEA=
+DA'>client-app</span><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>. Just keep it </span=
+><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>dist</span><span
+       style=3D'font-family:Calibri;font-size:11.0pt'> so that </span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>appname</span><=
+span
+       style=3D'font-family:Calibri;font-size:11.0pt'> does not leak into b=
+ackend
+       pom.xml</span></li>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>Reference: </span><a
+       href=3D"https://shekhargulati.com/2017/11/08/a-minimalist-guide-to-b=
+uilding-spring-boot-angular-5-applications/"><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>https://shekhargulati=
+.com/2017/11/08/a-minimalist-guide-to-building-spring-boot-angular-5-applic=
+ations/</span></a></li>
+  </ul>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'font-weight:bold'>Alternative 1:</span></p>
+  <ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:em=
+bed;
+   margin-top:0in;margin-bottom:0in'>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>Use maven modules to
+       organize frontend and backend as is.<span style=3D'mso-spacerun:yes'=
+> 
+       </span>Instead of packaging client as webjar, copy them to server's =
+</span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>src/main/resour=
+ces</span><span
+       style=3D'font-family:Calibri;font-size:11.0pt'> or </span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>static</span><s=
+pan
+       style=3D'font-family:Calibri;font-size:11.0pt'> folder. It will be s=
+erved
+       by spring-boot automatically.</span></li>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>Use the </span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>angular.json -&=
+gt;
+       outputPath </span><span style=3D'font-family:Calibri;font-size:11.0p=
+t'>to<span
+       style=3D'mso-spacerun:yes'>    </span></span></li>
+  </ul>
+  <p style=3D'margin:0in;margin-left:.375in'><span style=3D'font-family:"Co=
+urier New";
+  font-size:9.0pt;color:#032F62;background:white'>&quot;outDir&quot;</span>=
+<span
+  style=3D'font-family:"Courier New";font-size:11.0pt'>: </span><span
+  style=3D'font-family:"Courier New";font-size:9.0pt;color:#032F62;backgrou=
+nd:
+  white'>&quot;../AppName-Service/src/main/resources/static/&quot;</span><s=
+pan
+  style=3D'font-family:Calibri;font-size:11.0pt'>,</span></p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:Calibri;font-size:1=
+1.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'font-weight:bold'>Alternative 2:</span></p>
+  <ul type=3Ddisc style=3D'margin-left:.375in;direction:ltr;unicode-bidi:em=
+bed;
+   margin-top:0in;margin-bottom:0in'>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>Create spring-boot and
+       angular app in same folder</span></li>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>The src folder will h=
+ave
+       angular as well main/java directory.</span></li>
+   <li style=3D'margin-top:0;margin-bottom:0;vertical-align:middle'><span
+       style=3D'font-family:Calibri;font-size:11.0pt'>Send angular output t=
+o </span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>src/main/resour=
+ces</span><span
+       style=3D'font-family:Calibri;font-size:11.0pt'> or </span><span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>static</span><s=
+pan
+       style=3D'font-family:Calibri;font-size:11.0pt'> folder using </span>=
+<span
+       style=3D'font-family:"Courier New";font-size:11.0pt'>angular.json -&=
+gt;
+       outputPath</span></li>
+  </ul>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:Calibri;font-size:1=
+1.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'font-weight:bold'>Note: </span></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>Ensure angul=
+ar is
+  using the node and node_modules managed by maven frontend plugin.</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'font-weight:bold'>How?</span></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>At the root =
+of
+  frontend application.</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'font-weight:bold'><span style=3D'mso-spacerun:yes'> </span></sp=
+an></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:10.2pt;color:#=
+24292E'><span
+  style=3D'background:#F6F8FA'>$ cat &gt; npm<br>
+    #!/bin/sh<br>
+    cd $(dirname $0)<br>
+    PATH=3D&quot;$PWD/node/&quot;:$PATH<br>
+    node &quot;node/node_modules/npm/bin/npm-cli.js&quot; &quot;$@&quot;<br>
+    $ chmod +x npm</span></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:10.2pt;color:#=
+24292E'><span
+  style=3D'background:#F6F8FA'>./npm install @angular/cli</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:10.2pt;color:#=
+24292E'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:10.2pt;color:#=
+24292E'><span
+  style=3D'background:#F6F8FA'>$ cat &gt; ng<br>
+    #!/bin/sh<br>
+    cd $(dirname $0)<br>
+    PATH=3D&quot;$PWD/node/&quot;:&quot;$PWD&quot;:$PATH<br>
+    node_modules/@angular/cli/bin/ng &quot;$@&quot;<br>
+    $ chmod +x ng</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:10.2pt;color:#=
+24292E'><span
+  style=3D'background:#F6F8FA'>$ ./ng --version</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:10.2pt;color:#=
+24292E'><span
+  style=3D'background:#F6F8FA'>$ ./ng e2e</span></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p><cite style=3D'margin:0in;font-family:Calibri;font-size:9.0pt;color:#5=
+95959'>From
+  &lt;<a href=3D"https://github.com/dsyer/spring-boot-angular">https://gith=
+ub.com/dsyer/spring-boot-angular</a>&gt;
+  </cite></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:Calibri;font-size:1=
+1.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:Calibri;font-size:1=
+1.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'mso-spacerun:yes'> </span></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2381in;
+  height:5.784in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.125in;
+  height:5.784in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:.4652in;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.25in;
+  height:.4652in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2381in;
+  height:.4652in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.125in;
+  height:.4652in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:6.4173in;
+  height:.4652in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1.327in;
+  height:.4652in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:5.4333in;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.25in;
+  height:5.4333in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2381in;
+  height:5.4333in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td colspan=3D2 rowspan=3D2 valign=3Dtop style=3D'vertical-align:top;marg=
+in:0in;
+  padding:0pt;width:6.5423in;height:11.2847in'>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'><span
+  style=3D'background:#99CCFF'>/</span><span style=3D'background:#FFFF99'>t=
+emplateapp</span><span
+  style=3D'background:#99CCFF'>/</span><span style=3D'font-weight:bold;back=
+ground:
+  #99CCFF'>next-backend</span><span style=3D'background:#99CCFF'>/</span><s=
+pan
+  style=3D'font-weight:bold;background:#99CCFF'>pom.xml</span></p>
+  <p style=3D'margin:0in;font-family:Calibri;font-size:11.0pt'>&nbsp;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;?x=
+ml
+  version=3D&quot;1.0&quot; encoding=3D&quot;UTF-8&quot;?&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;pr=
+oject
+  …&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;parent&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'><span style=3D'background:#FFFF99'>&lt;artifactId&gt;spring-boot-=
+starter-parent&lt;/artifactId&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'><span style=3D'background:#FFFF99'>&lt;version&gt;2.2.2.RELEASE&l=
+t;/version&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt=
+;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;/parent&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;groupId&gt;com.comp.codename&lt;/groupId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;artifactId&gt;<span style=3D'background:#FFC000'>app-backend<=
+/span>&lt;/artifactId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'><span style=3D'background:#FFFF99'>&lt;packaging&gt;</span><span
+  style=3D'font-weight:bold;background:#FFFF99'>jar</span><span style=3D'ba=
+ckground:
+  #FFFF99'>&lt;/packaging&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;name&gt;demo-server&lt;/name&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;description&gt;Demo server project&lt;/description&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;properties&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;java.version&gt;1.8&lt;/java.version&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;/properties&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;dependencies&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;dependency&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;=
+</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;artifactId&gt;spring-boot-<span style=3D'background=
+:#FFFF99'>starter-security</span>&lt;/artifactId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;/dependency&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;dependency&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;=
+</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;artifactId&gt;spring-boot-<span style=3D'background=
+:#FFFF99'>starter-web</span>&lt;/artifactId&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;/dependency&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'><span style=3D'background:#FFFF99'>&lt;dependency&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'><span style=3D'background:#FFFF99'>&lt;groupId&gt;com.c=
+omp.codename&lt;/groupId&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'><span style=3D'background:#FFFF99'>&lt;artifactId&gt;de=
+mo-frontend&lt;/artifactId&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'><span style=3D'background:#FFFF99'>&lt;version&gt;1.0.0=
+-SNAPSHOT&lt;/version&gt;</span></p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'><span style=3D'background:#FFFF99'>&lt;/dependency&gt;</span></p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;dependency&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;=
+</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;artifactId&gt;spring-boot-starter-test&lt;/artifact=
+Id&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;scope&gt;test&lt;/scope&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;exclusions&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.5in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;exclusion&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.875in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;groupId&gt;org.junit.vintage&lt;/groupId&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.875in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;artifactId&gt;junit-vintage-engine&lt;/artifactId&g=
+t;</p>
+  <p style=3D'margin:0in;margin-left:1.5in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;/exclusion&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;/exclusions&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;/dependency&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;dependency&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;groupId&gt;org.springframework.security&lt;/groupId=
+&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;artifactId&gt;spring-security-test&lt;/artifactId&g=
+t;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;scope&gt;test&lt;/scope&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;/dependency&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;/dependencies&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;build&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;plugins&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;plugin&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.5in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.5in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</p>
+  <p style=3D'margin:0in;margin-left:1.125in;font-family:"Courier New";
+  font-size:11.0pt'>&lt;/plugin&gt;</p>
+  <p style=3D'margin:0in;margin-left:.75in;font-family:"Courier New";font-s=
+ize:
+  11.0pt'>&lt;/plugins&gt;</p>
+  <p style=3D'margin:0in;margin-left:.375in;font-family:"Courier New";font-=
+size:
+  11.0pt'>&lt;/build&gt;</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&nbsp;=
+</p>
+  <p style=3D'margin:0in;font-family:"Courier New";font-size:11.0pt'>&lt;/p=
+roject&gt;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1.327in;
+  height:5.4333in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1px;
+  height:5.8506in;font-size:1pt'>
+  <p style=3D'font-size:1pt'>&nbsp;</p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.25in;
+  height:5.8506in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:4.3965in;
+  height:5.8506in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2402in;
+  height:5.8506in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:.2381in;
+  height:5.8506in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+  <td valign=3Dtop style=3D'vertical-align:top;margin:0in;padding:0pt;width=
+:1.327in;
+  height:5.8506in;font-size:1pt'>
+  <p style=3D'font-size:1pt'></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</div>
+
+<div>
+
+<p style=3D'margin:0in'>&nbsp;</p>
+
+<p style=3D'text-align:left;margin:0in;font-family:Arial;font-size:9pt;
+color:#969696;direction:ltr'>Created with Microsoft OneNote 2016.</p>
+
+</div>
+
+</body>
+
+</html>
