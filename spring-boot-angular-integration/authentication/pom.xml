@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.comp.authdemo</groupId>
+	<artifactId>authdemo-parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>springboot-angular-authentication</name>
+	<description>Demo project for Spring Boot, Spring Security and angular</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+    <modules>
+        <module>auth-backend</module>
+        <module>auth-frontend</module>
+    </modules>
+
+</project>
