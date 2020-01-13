@@ -14,7 +14,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
-	
+
 	<build>
         <plugins>
             <plugin>
@@ -50,7 +50,7 @@
                             <arguments>run-script build</arguments>
                         </configuration>
                     </execution>
-                    <execution>
+                    <!-- <execution>
                         <id>npm-test</id>
                         <goals>
                             <goal>npm</goal>
@@ -59,7 +59,7 @@
                             <arguments>run-script e2e</arguments>
                         </configuration>
                         <phase>test</phase>
-                    </execution>
+                    </execution> -->
                 </executions>
             </plugin>
 			<plugin>
