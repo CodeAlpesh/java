@@ -27,7 +27,7 @@ Building modular spring-boot and angular app is explained [here](https://github.
         * Validating submitted username and passwords
         * Redirecting to the log in form, and so on ...  within your application
     * Register this filter for every request to servlet container
-    * Creates a UserDetailsService bean with a username of `user` and a randomly generated password (BCrypt) - logged to the console. Set your own password using `security.user.password=password` in `application.properties` file.
+    * Creates a UserDetailsService bean with a username of `user` and a randomly generated password (BCrypt) - logged to the console. Set your own password using `spring.security.user.name=alpesh` and `spring.security.user.password=password` in `application.properties` file.
 * Spring Boot is not configuring much, but it does a lot. A summary of the features follows
     * Require an authenticated user for any interaction with the application
     * Generate a default login form for you
