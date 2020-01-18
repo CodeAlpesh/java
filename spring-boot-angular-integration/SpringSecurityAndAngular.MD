@@ -127,7 +127,8 @@ If the `/api/user` resource is reachable then it will return the currently authe
         * The client reads the cookie and adds a custom request header with the token in all subsequent requests.
         * The server compares the received request header value (to maintained on server) and rejects the request if the values are missing or don't match.
     * Spring boot: 
-        * Enable `csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())`
+        * Enable `csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())`. 
+        * `CookieCsrfTokenRepository` is an implementation of the Cookie-to-Header Token technique.
         * Will send cookie `{"XSRF-TOKEN":{"path":"/","value":"824cb949-008d-4bb0-a10c-f6aaf178601f"}}`
         * Adds `CsrfFilter` filter which will check for token in header or request param. Does NOT expect a cookie.
         * Validates all **except** "GET", "HEAD", "TRACE", "OPTIONS"
@@ -136,6 +137,7 @@ If the `/api/user` resource is reachable then it will return the currently authe
     * Angular - Has built in support. 
         * will read cookie `XSRF-TOKEN` and sets request header `X-XSRF-TOKEN`  for POST, PUT etc ..
         * `X-XSRF-TOKEN:824cb949-008d-4bb0-a10c-f6aaf178601f`
+    * [Reference](https://medium.com/sparkles-blog/angular2-and-spring-a-friend-in-security-need-is-a-friend-against-csrf-indeed-9f83eaa9ca2e)
     * **TODO**: Writeup on what is csrf and how it works. More details [spring-docs](https://docs.spring.io/spring-security/site/docs/3.2.0.CI-SNAPSHOT/reference/html/csrf.html), [BaelDung](https://www.baeldung.com/spring-security-csrf), [YouTube](https://www.youtube.com/watch?v=9inczw6qtpY)
 
 ### Issues with basic auth.
