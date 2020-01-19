@@ -36,10 +36,13 @@ Spring boot helps to perform above tasks.
     * Browser will ask for authentication.
     * Browser will send auth token with each request.
         * For form-based authentication JSESSIONID will be shared.
-        * For basic auth the `Authorization` header will be sent with each request `Authorization: Basic dXNlcjpwYXNzd29yZA==` BASE64_Encoding(usename:password)
+        * For basic auth the `Authorization` header will be sent with each request `Authorization: Basic dXNlcjpwYXNzd29yZA==` BASE64_Encoding(usename:password). 
+        * HttpSession can be enabled for basic auth also. No need to send the `Authorization` header with each request. JSESSIONID will do the job.
+        * CSRF protection is enabled by default in java autoconfiguration.
+        * **Note:** Need to enable `CookieCsrfTokenRepository` implementation for the Cookie-to-Header Token technique.
 * **Milestone**: 
     * So far we have observed default spring security behaviour.  
-    * Adds a custom login form
+    * Forms login is enabled and a default login (with form) and logout  provided
     * All URL are protected so application will load only after authentication.
 
 ## CUSTOM Login form + basic authentication
@@ -47,8 +50,7 @@ Spring boot helps to perform above tasks.
 
 **1. Using Basic Authentication** 
 
-* Enable basic auth only using `WebSecurityConfigurerAdapter`
-* Login component accepts username/password and submit the form.
+* Create LoginComponent which accepts username/password and submit the form.
   ```
   login() {
     this.authService.authenticate(this.credentials, () => {
@@ -79,7 +81,8 @@ Spring boot helps to perform above tasks.
    }
 ```
 * The AuthService keeps authentication status. Any error should be shared with login component.
-* The server endpoint: 
+* The server - Enable basic auth only using `WebSecurityConfigurerAdapter`
+* Create secured rest endpoint: 
 ```
 	@GetMapping("/api/user")
 	public Principal user(Principal user) {
@@ -88,22 +91,21 @@ Spring boot helps to perform above tasks.
 ```
 * This is a useful **trick** in a Spring Security application. 
 If the `/api/user` resource is reachable then it will return the currently authenticated user (an Authentication), and otherwise Spring Security will intercept the request and send a 401 response through an AuthenticationEntryPoint.
-* Authentication details are sent with req. Spring Security will intercept and perform authentication (For Basic auth / token based auth).
-    * **TODO**: Implement form based login.
+* Authentication details sent as http request header. Spring Security will intercept and perform authentication (For Basic auth).
+    * **TODO**: Implement form based login. JWT token ???
 * **Important**: Adding Default HTTP Request Headers: 
-    * Home component calls `/api/resource` and Login component calls `/api/user` and browser will get HTTP status 401 and response header `WWW-Authenticate` Exa: `WWW-Authenticate: Basic realm="Realm"`
-     and hence browser basic auth popup.
+    * Home component calls `/api/resource` and Login component calls `/api/user` and browser will get HTTP status 401 with response header `WWW-Authenticate` Exa: `WWW-Authenticate: Basic realm="Realm"`
+     and hence browser shows basic auth popup.
     * To suppress this popup, suppress the header, which is coming from Spring Security. To suppress the reponse header is to send a special, conventional request header `X-Requested-With=XMLHttpRequest`.
     * Write Angular filter (register as HTTP_INTERCEPTORS in App module) to add above header for each Xhr requests.
     * Browser basic auth popup is gone now.   
 * **Logout**:
-    * Spring securoty will auto configure the logout at `/logout`
+    * Spring security will auto configure the logout at `/logout`
 
 * **Server config notes**:
     * Enable HTTP basic
     * All resources are protected by default. You have to permit `index.html, resources (js, css, ico etc.)` required to render angular app. Else browser's basic auth popup will appear. The request header `X-Requested-With=XMLHttpRequest` is sent only for ajax requests. Hence all non-xhr requests must be free.
     * Spring boot is auto configured to forward request `/` to `index.html` 
-    
         ```
         @Configuration
         protected static class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -140,14 +142,26 @@ If the `/api/user` resource is reachable then it will return the currently authe
     * [Reference](https://medium.com/sparkles-blog/angular2-and-spring-a-friend-in-security-need-is-a-friend-against-csrf-indeed-9f83eaa9ca2e)
     * **TODO**: Writeup on what is csrf and how it works. More details [spring-docs](https://docs.spring.io/spring-security/site/docs/3.2.0.CI-SNAPSHOT/reference/html/csrf.html), [BaelDung](https://www.baeldung.com/spring-security-csrf), [YouTube](https://www.youtube.com/watch?v=9inczw6qtpY)
 
-### Issues with basic auth.
+### Issues with basic auth. NOT SUre ...
 * restricted to username and password authentication
 * HTTPS is must ... username password goes as Base64 encoded string
-* no protection from [Cross Site Request Forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery) (CSRF)
+* No builtin protection from [Cross Site Request Forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery) (CSRF)
     *  As soon as you have a POST, PUT or DELETE in your application it simply isn’t secure any mor
-    * Use HttpSession to store and validate token at backend
+    * Use HttpSession to store and validate token at backend (cookie-2-header)
 
 
 ### Dev Notes:
 * For verbose (informative) spring security logs ...  `logging.level.org.springframework.security=DEBUG`
 * Explore `spring.security.ignored="*.bundle.*"`
+
+
+## WHAT NEXT:
+* For current setup i.e client app, spring securoty (basic auth + http session + CSRF protection)
+    1. Differen user storages (InMemory, JDBC, LDAP etc)
+    2. Different entry points as [here](https://medium.com/@mind_sFlight/basic-authentication-with-angular-7-and-spring-security-6fd140efc031) and [here](https://leaks.wanari.com/2017/11/28/how-to-make-custom-usernamepasswordauthenticationfilter-with-spring-security/)
+    3. Other ways to authenticate / authorise ... Oauth, SAML etc
+* Lets explore entrypoints(2) then storage integerations(1) then other ways(3)  
+
+### 2. Diffrenet entry points to spring security
+* **Source:** https://medium.com/@mind_sFlight/basic-authentication-with-angular-7-and-spring-security-6fd140efc031
+
