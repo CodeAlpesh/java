@@ -154,7 +154,31 @@ If the `/api/user` resource is reachable then it will return the currently authe
 * For verbose (informative) spring security logs ...  `logging.level.org.springframework.security=DEBUG`
 * Explore `spring.security.ignored="*.bundle.*"`
 
+## Scalability
+Isn’t it Really Bad to use session state in a single-page application?
+* For authentication and CSRF protection using HttpSession is definitely good.
+* Security has to be stateful. 
+    * TCP and SSL are stateful
+    * State has to be stored somewhere.
+    * Manage yourself (i.e. more code ... and vulnerabilities)
+        * Why to reinvent perfectly working wheel?
+* **`TODO`:** Is CORS POST (non xhr) blocked??? same origin policy ...???
+How do I scale horizontally?
+* Sticky sessions, loadbalancer (have n nodes) .. will scale big
+    * Routes request to same JVM where session is managed
+    * Will work for large number of users
+* Share session with nodes
+    * Memcache / redis backed session storage
+    * Try [Spring Session](https://github.com/spring-projects/spring-session/)
+    * Keep session light weight
+* What about JWTs?
+    * How are you going to provide CSRF protection?
+    * Rule of thumb (Rob Winch):
+        * If your application or API is going to be accessed by a browser, you need CSRF protection.
+        * Using cookies and HTTP session provides proven solution. 
+        * Do not have to write/manage/update - non business logic code.
 
+        
 ## WHAT NEXT:
 * For current setup i.e client app, spring securoty (basic auth + http session + CSRF protection)
     1. Differen user storages (InMemory, JDBC, LDAP etc)
