@@ -141,6 +141,9 @@ If the `/api/user` resource is reachable then it will return the currently authe
         * `X-XSRF-TOKEN:824cb949-008d-4bb0-a10c-f6aaf178601f`
     * [Reference](https://medium.com/sparkles-blog/angular2-and-spring-a-friend-in-security-need-is-a-friend-against-csrf-indeed-9f83eaa9ca2e)
     * **TODO**: Writeup on what is csrf and how it works. More details [spring-docs](https://docs.spring.io/spring-security/site/docs/3.2.0.CI-SNAPSHOT/reference/html/csrf.html), [BaelDung](https://www.baeldung.com/spring-security-csrf), [YouTube](https://www.youtube.com/watch?v=9inczw6qtpY)
+    * Alternative: 
+        * GOAL: Protect the log in form in static HTML site.
+        * Solution: Obtain a valid CSRF token before the form submission. Configure the `CsrfTokenArgumentResolver`. Expose an [endpoint](https://docs.spring.io/spring-security/site/docs/5.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#mvc-csrf-resolver) e.g. `/csrf` Do not enable CORS for this endpoint.    
 
 ### Issues with basic auth. NOT SUre ...
 * restricted to username and password authentication
@@ -153,6 +156,7 @@ If the `/api/user` resource is reachable then it will return the currently authe
 ### Dev Notes:
 * For verbose (informative) spring security logs ...  `logging.level.org.springframework.security=DEBUG`
 * Explore `spring.security.ignored="*.bundle.*"`
+* Debug params `-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8998`
 
 ## Scalability
 Isn’t it Really Bad to use session state in a single-page application?
@@ -178,14 +182,139 @@ How do I scale horizontally?
         * Using cookies and HTTP session provides proven solution. 
         * Do not have to write/manage/update - non business logic code.
 
-        
+
 ## WHAT NEXT:
 * For current setup i.e client app, spring securoty (basic auth + http session + CSRF protection)
     1. Differen user storages (InMemory, JDBC, LDAP etc)
-    2. Different entry points as [here](https://medium.com/@mind_sFlight/basic-authentication-with-angular-7-and-spring-security-6fd140efc031) and [here](https://leaks.wanari.com/2017/11/28/how-to-make-custom-usernamepasswordauthenticationfilter-with-spring-security/)
-    3. Other ways to authenticate / authorise ... Oauth, SAML etc
-* Lets explore entrypoints(2) then storage integerations(1) then other ways(3)  
+    2. Forms login
+    3. Different entry points as [here](https://medium.com/@mind_sFlight/basic-authentication-with-angular-7-and-spring-security-6fd140efc031) and [here](https://leaks.wanari.com/2017/11/28/how-to-make-custom-usernamepasswordauthenticationfilter-with-spring-security/)
+    4. Other ways to authenticate / authorise ... Oauth, SAML etc
+* Lets explore FormsLogin(2) then entrypoints(3) and then storage integerations(1) then other ways(4)  
 
 ### 2. Diffrenet entry points to spring security
 * **Source:** https://medium.com/@mind_sFlight/basic-authentication-with-angular-7-and-spring-security-6fd140efc031
 
+
+
+## CUSTOM Login form + FormsLogin
+
+### Server Configuration 
+```
+	http
+	    .authorizeRequests()
+	  	.antMatchers("/*.js", "/index.html", "/", "/home", "/login", "/*.ico").permitAll()
+	    .anyRequest().authenticated()
+	    .and()
+      .formLogin()
+      	.loginPage("/login")                <- path to request Login page 
+      	.loginProcessingUrl("/api/login")   <- Path that receives POST
+      	.successForwardUrl("/home")
+      	.defaultSuccessUrl("/home")
+      	.failureUrl("/home")
+      .and()
+	  .csrf()
+	      .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+```
+```
+  authenticate(credentials, callback) {
+
+    let body: HttpParams = new HttpParams();
+    body = body.append('username', credentials.username);
+    body = body.append('password', credentials.password);
+
+    this.http.post('/api/login', body).subscribe(
+      response => {
+        console.log(response);
+        if (response['name']) {
+          this.authenticated = true;
+      } else {
+          this.authenticated = false;
+      }
+      return callback && callback();
+      }
+    );
+
+   }
+
+  login() {
+    this.app.authenticate(this.credentials, () => {
+        this.router.navigateByUrl('/');
+    });
+    return false;
+  }   
+```
+### Default Behaviour
+* The `UsernamePasswordAuthenticationFilter` is configured by SpringSecurity(SS) to handle http POST at `/login` with parameter names `username` and `password` - all configurable
+* On success send HTTP response 302 to loginSuccess URL
+* **Issue:**
+    * For Ajax Login requests also, SS sends 302 response which is followed AND a new xhr request is sent for new URL). In case of Angular-SB-SS, the server is configured to forward non api requests to index.html
+    * Hence the XHR response will have index.html. Client code neither understand it nor use it, hence Angular router does not kick in and no navigation takes place.
+    * **Solution:**
+    * Configure server to send JSON response in case AJAX login requests. Use `AuthenticationSuccessHandler` and `AuthenticationFailureHandler` to send JSON response.  
+    * It can be used to manage conditional redirects/forwards to various URLs.
+    * Check this [github repo](https://github.com/camechis/Spring-Security-Ajax/blob/master/org/camechis/AjaxSuccessAuthenticationHandler.java) for Example Implementation. Some devs also check whether resource is commited or not - Check [Baeldung example](https://www.baeldung.com/spring_redirect_after_login)
+    * The JSON res example:
+    ```
+      .formLogin()
+      	.loginPage("/login")
+      	.loginProcessingUrl("/api/login")
+      	.successHandler(new AuthenticationSuccessHandler() {
+			
+			@Override
+			public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+					Authentication authentication) throws IOException, ServletException {
+				HttpServletResponseWrapper responseWrapper = new HttpServletResponseWrapper(
+						response);
+
+				Writer out = responseWrapper.getWriter();
+				Map<String, Object> authResponse = new HashMap<String, Object>();
+				authResponse.put("success", true);
+				authResponse.put("user", SecurityContextHolder.getContext()
+						.getAuthentication().getName());
+				List<String> authorities = new ArrayList<String>();
+				for (GrantedAuthority auth : SecurityContextHolder.getContext()
+						.getAuthentication().getAuthorities()) {
+					authorities.add(auth.getAuthority());
+				}
+				authResponse.put("authorities", authorities);
+				ObjectMapper mapper = new ObjectMapper();
+				mapper.writeValue(out, authResponse);
+				out.close();	
+			
+			}
+		})    
+    ```
+
+* **Issue:**
+    * On application start, the client sends api request. User may not have valid session. By default, User will be reditected to login page request url (HTTP 302) and above behaviour will be observed again. Instead server should send JSON response with status code 401.
+    * **Solution:**
+    * Configure AuthenticationEntryPoint for exception handling, which will set necessary HTTP HEADERs.
+    * SS Filter chain has `ExceptionTranslationFilter`, whose job is to handle SpringSecurity exceptions `AccessDeniedException` and `AuthenticationExceptionthrown`. It delegates work to an `authenticationEntryPoint ` handler that should commencethe authentication process if an AuthenticationException is detected. 
+    * Use `AuthenticationException` type to set 401 Unauthorized  or 403 Forbidden response status code.
+    ```
+        http
+          ...
+          ...
+        .and()
+      	  .exceptionHandling()
+	        .authenticationEntryPoint(new AuthenticationEntryPoint() {				
+				@Override
+				public void commence(HttpServletRequest request, HttpServletResponse response,
+						AuthenticationException authException) throws IOException, ServletException {
+					
+                    response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
+                    HttpServletResponseWrapper responseWrapper = new HttpServletResponseWrapper(response);
+					Writer out = responseWrapper.getWriter();
+					Map<String, Object> authResponse = new HashMap<String, Object>();
+					authResponse.put("success", false);
+					authResponse.put("reason", authException.getMessage());
+					ObjectMapper mapper = new ObjectMapper();
+					mapper.writeValue(out, authResponse);
+					out.close();
+				}
+			});
+    ```
+* Notes
+    * Also configure loginProcessing URL as `/api/...` so that:
+        * In dev mode when app is run by angular using proxy, login will still continue to work single consistent rule. **MAYBE** configure the proxy to pass `/login` and `/logout` also to server. 
+    
