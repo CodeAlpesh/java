@@ -313,8 +313,67 @@ How do I scale horizontally?
 					out.close();
 				}
 			});
+        // If you just want to retirn an HTTP status code
+        //.exceptionHandling()
+        //    .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
     ```
+* **Issue:**
+    * App is protected by forms-login. Need to protect public APIs. API are accesible as `/api/**`. FrontEnd (Angular app) is also using these apis (/api/login, /api/resource) etc. Other clients can also use this apis authenticated using basic auth.  
+    * **Solution:**
+    * Configure basic and forms login in same WebSecurityConfigurerAdapter class.   
+    
+
 * Notes
     * Also configure loginProcessing URL as `/api/...` so that:
         * In dev mode when app is run by angular using proxy, login will still continue to work single consistent rule. **MAYBE** configure the proxy to pass `/login` and `/logout` also to server. 
     
+### WIP / TODO:
+* [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/5.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#)
+* [Spring Security Architecture](https://spring.io/guides/topicals/spring-security-architecture)
+* [Different ways to implement username/password authentication @ Minds_sFlight](https://medium.com/@mind_sFlight/basic-authentication-with-angular-7-and-spring-security-6fd140efc031#7a1c)
+* [Make custom Username Password Authentication Filter with Spring Security](https://leaks.wanari.com/2017/11/28/how-to-make-custom-usernamepasswordauthenticationfilter-with-spring-security/)
+* Forms login for client-app (browser) + Basic Auth for REST APIs .. in same webapp 
+    * Same APIs should be accesible by client app
+    * Implications? Ho will you organize for different roles / features. (AUthorization)
+* Authentication different Ways
+* Password encryptors ... `PasswordEncoderFactories`, `DelegatingPasswordEncoder` 
+```
+	@SuppressWarnings("deprecation")
+	public static PasswordEncoder createDelegatingPasswordEncoder() {
+		String encodingId = "bcrypt";
+		Map<String, PasswordEncoder> encoders = new HashMap<>();
+		encoders.put(encodingId, new BCryptPasswordEncoder());
+		encoders.put("ldap", new org.springframework.security.crypto.password. ~~LdapShaPasswordEncoder~~ ());
+		encoders.put("MD4", new org.springframework.security.crypto.password.~~Md4PasswordEncoder~~());
+		encoders.put("MD5", new org.springframework.security.crypto.password.~~MessageDigestPasswordEncoder~~("MD5"));
+		encoders.put("noop", org.springframework.security.crypto.password.~~NoOpPasswordEncoder.getInstance()~~);
+		encoders.put("pbkdf2", new Pbkdf2PasswordEncoder());
+		encoders.put("scrypt", new SCryptPasswordEncoder());
+		encoders.put("SHA-1", new org.springframework.security.crypto.password.~~MessageDigestPasswordEncoder~~("SHA-1"));
+		encoders.put("SHA-256", new org.springframework.security.crypto.password.~~MessageDigestPasswordEncoder~~("SHA-256"));
+		encoders.put("sha256", new org.springframework.security.crypto.password.~~StandardPasswordEncoder~~());
+		encoders.put("argon2", new Argon2PasswordEncoder());
+
+		return new DelegatingPasswordEncoder(encodingId, encoders);
+	}
+
+    class DelegatingPasswordEncoder {
+    ... 
+    ...
+    @Override
+	public boolean matches(CharSequence rawPassword, String prefixEncodedPassword) {
+		if (rawPassword == null && prefixEncodedPassword == null) {
+			return true;
+		}
+		String id = extractId(prefixEncodedPassword);
+		PasswordEncoder delegate = this.idToPasswordEncoder.get(id);
+		if (delegate == null) {
+			return this.defaultPasswordEncoderForMatches
+				.matches(rawPassword, prefixEncodedPassword);
+		}
+		String encodedPassword = extractEncodedPassword(prefixEncodedPassword);
+		return delegate.matches(rawPassword, encodedPassword);
+	}
+```
+* Angular side integration [Angular Security Masterclass](https://www.udemy.com/course/angular-security)
+* `@RequestMapping(path = {"/api", "/rest"})`
