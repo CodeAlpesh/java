@@ -46,11 +46,70 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 
 ## Multiple config classes for different entry points
-* If you have different entry paths then works like a charm. Can configure different classes `WebSecurityConfigurerAdapter` classes. Default Order is 100 as of Spring Security 5.x 
+* If you have different entry paths then works like a charm. Can configure different classes `WebSecurityConfigurerAdapter` classes for each path. Default Order is 100 as of Spring Security 5.x 
 * Creates filter chain based on auth type selected. Filter chain gets associated with given path. Exa:
     * forms login for `/api/**` (csrf protection)
     * basic auth for `/rest/**`
-        * Can setup CSRF protection. CLient needs to retrieve it  
+        * Should I setup CSRF protection for external API clients? Short answer **NO**. Why? The idea of CSRF protection is to prevent POST from non-sameorigin webpages. CSRF token is known to legitimat client only. By allowing all clients to retrieve the csrf token, defeats the purpose. That's why /csrf end point using CsrfTokenArgumentResolver/@EnableWebSecurity Should not be enabled for CORS (Unauthorized client can also request it - So infact do NOT allow CORS for /csrf)
+    * `ApiWebSecurityConfigurationAdapter`
+        *  sets up basic auth for `"/rest/**"` path 
+        * authorized user also needs `ADMIN` role. Can be `API_USER` also.
+        * `@Order(1)` ... smaller number takes higher precedence ... i.e. will handle request earlier.
+        * Difference of `http.antMatcher` and  and  `http..authorizeRequests().antMatchers("/rest/**")` ...  
+            ```
+            http
+            .antMatcher("/rest/**")
+                .authorizeRequests()
+                ....
+
+            vs...
+            
+            http.
+            .authorizeRequests()
+                .antMatchers("/*.js" ...
+                ...
+            ```
+        * `http.antMatcher().authorizeRequests() ...` will ensure that security configuration will be applied to matching routes only.
+            * Notice the singular *antMatcher* method.
+            * Check logs ... *Creating filter chain: Ant* [pattern='/rest/**'],
+            * Rules(Auth type) and filter chain will be applied to  only `/rest/**` in this case. Check the *Creating filter chain* line in logs.
+            * Non matching will **NOT** error out. SS will try to match other providers.
+            * Without this clause non-rest reques also falls through `ApiWebSecurityConfigurationAdapter` and will error out - Because `ApiWebSecurityConfigurationAdapter` is not configured to handle non-rest calls.
+        * `http.authorizeRequests()` ... all valid requests will be passed through these rules and filter chain. (If request is not approved / rejected).
+            * Example: all requests will fall through this rules and chain.  
+            * check logs *Creating filter chain: any request*
+        * Check logs ... *Creating filter chain: Ant* [pattern='/rest/**'] ... BasicAuthenticationFilter is configured for this path
+    * The `FormLoginWebSecurityConfigurerAdapter` sets up Forms login for browser users.
+        * It will handle all non authenticated requets ... using `http.authorizeRequests()`.
+        * All static resources (css/js/images/icons) should be accsible by all.
+        * login (get login page request) and logout should be accesible by all.
+        * **MUST** return JSON response for following cases, because SPA has made an API call and its expecting JSON. Default is some 302 on XHR and app will not know what to do.
+            * login success 
+            * login failure
+                ```
+                .formLogin()
+                    .loginPage("/login")
+                    .loginProcessingUrl("/api/login")
+                    .successHandler(new AppAuthSuccessHandler())
+                    .failureHandler(new AppAuthFailureHandler()
+                ``` 
+            * logout
+                * TODO: CHECK: Is it invalidating session and deleting cookie also. 
+                ```
+                .logout()
+					.addLogoutHandler(new AppLogoutHandler())
+                ```
+            * unauthorized access - Configure authenticationEntryPoint
+                ```
+                    .exceptionHandling()
+					    .authenticationEntryPoint(new AppAuthExceptionEntryPoint());
+
+                    //OR
+
+			        .and()
+					    .exceptionHandling()
+						    .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED));
+                ```
 ```
 @EnableWebSecurity
 public class Config2 {
@@ -73,7 +132,8 @@ public class Config2 {
 			http
 				.antMatcher("/rest/**")
 					.authorizeRequests()
-						.anyRequest().hasRole("ADMIN")
+						.anyRequest().hasRole("ADMIN ")
+                        // or simply .authenticated()
 				.and()
 					.httpBasic()
 				.and()
