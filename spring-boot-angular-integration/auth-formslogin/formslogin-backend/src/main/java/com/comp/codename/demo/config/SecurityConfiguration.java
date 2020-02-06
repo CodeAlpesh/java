@@ -22,34 +22,53 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Configuration
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-			.authorizeRequests()
-				.antMatchers("/*.js", "/index.html", "/", "/home", "/login", "/*.ico")
-					.permitAll()
-				.anyRequest()
-					.authenticated()
-			.and()
-				.formLogin()
-					.loginPage("/login")
-					.loginProcessingUrl("/api/login")
-					.successHandler(new AppAuthSuccessHandler())
-					.failureHandler(new AppAuthFailureHandler())
-			.and()
-				.exceptionHandling()
-					.authenticationEntryPoint(new AppAuthExceptionEntryPoint())
-			.and()
-				.csrf()
-					.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
-	}
-}
+//@Configuration
+//public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+//	
+////  @Autowired
+////  public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+////      auth
+////      	.inMemoryAuthentication()
+////      		.withUser("user").password("{noop}password").roles("USER").and()
+////      		.withUser("admin").password("{noop}password").roles("USER", "ADMIN");
+////  }
+//	
+//	@Override
+//	protected void configure(HttpSecurity http) throws Exception {
+//		http
+//			.authorizeRequests()
+//				.antMatchers("/api/**")
+//					.authenticated()
+//				.and()
+//					.httpBasic()
+//			.and()
+//				.authorizeRequests()
+//					.antMatchers("/*.js", "/index.html", "/", "/home", "/login", "/*.ico")
+//						.permitAll()
+//						.anyRequest()
+//						.authenticated()
+//				.and()
+//					.formLogin()
+//						.loginPage("/login")
+//						.loginProcessingUrl("/api/login")
+//						.successHandler(new AppAuthSuccessHandler())
+//						.failureHandler(new AppAuthFailureHandler())
+//					.and()
+//						.exceptionHandling()
+//							.authenticationEntryPoint(new AppAuthExceptionEntryPoint())
+//					.and()
+//						.csrf()
+//							.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+//				
+//	}
+//}
 
 class AppAuthSuccessHandler implements AuthenticationSuccessHandler {
 
@@ -107,5 +126,25 @@ class AppAuthExceptionEntryPoint implements AuthenticationEntryPoint {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.writeValue(out, authResponse);
 		out.close();
+	}
+}
+
+
+class AppLogoutHandler implements LogoutHandler {
+
+	@Override
+	public void logout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+		
+		HttpServletResponseWrapper responseWrapper = new HttpServletResponseWrapper(response);
+		try {
+			Writer out = responseWrapper.getWriter();
+			Map<String, Object> authResponse = new HashMap<String, Object>();
+			authResponse.put("success", true);
+			ObjectMapper mapper = new ObjectMapper();
+			mapper.writeValue(out, authResponse);
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }

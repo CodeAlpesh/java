@@ -94,11 +94,22 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .failureHandler(new AppAuthFailureHandler()
                 ``` 
             * logout
-                * TODO: CHECK: Is it invalidating session and deleting cookie also. 
-                ```
-                .logout()
-					.addLogoutHandler(new AppLogoutHandler())
-                ```
+                * Default Behaviour:
+                    * On successful logout, Send 302 with configured logoutsuccessurl (can override default)
+                        ```
+                        Request URL:http://localhost:8080/logout
+                        Request Method:POST
+                        Status Code: 302
+                        Location: http://localhost:8080/login?logout
+                        ```
+                    * Invalidates session and deleted JSESSIONID cookie.
+                * Incase of SPA, need JSON response and not redirect (HTTP status 302)
+                    * Configure logout handler, which will write JSON response. Below configuration will also invalidate session and delete session cookie. 
+                    ```
+                        .logout()
+                            .addLogoutHandler(new AppLogoutHandler())
+                    ```
+
             * unauthorized access - Configure authenticationEntryPoint
                 ```
                     .exceptionHandling()
