@@ -1,3 +1,4 @@
+## Single config class
 ```
 @Configuration
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
@@ -32,9 +33,40 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 }
 ```
-* This will configure single filterchain ...
+* This will configure single filterchain for FormsAuth and Basic auth
+* GET api's will work. POST api calls will fail due to CSRF protection enabled for this. Can't seperate it out. Consider multiple entry points. Exa: POST /rest/user
+* Check the logs:
+    ```
+    Adding welcome page: class path resource [META-INF/resources/index.html]
 
-
+    Eagerly initializing {org.springframework.boot.autoconfigure.security.servlet.WebSecurityEnablerConfiguration=org.springframework.boot.autoconfigure.security.servlet.WebSecurityEnablerConfiguration@44fff386}
+    Adding web access control expression 'authenticated', for Ant [pattern='/api/**']
+    Adding web access control expression 'permitAll', for Ant [pattern='/*.js']
+    Adding web access control expression 'permitAll', for Ant [pattern='/index.html']
+    Adding web access control expression 'permitAll', for Ant [pattern='/']
+    Adding web access control expression 'permitAll', for Ant [pattern='/home']
+    Adding web access control expression 'permitAll', for Ant [pattern='/login']
+    Adding web access control expression 'permitAll', for Ant [pattern='/*.ico']
+    Adding web access control expression 'authenticated', for any request
+    Validated configuration attributes
+    Validated configuration attributes
+    Creating filter chain: any request, 
+    [
+        org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ace284d,
+        org.springframework.security.web.context.SecurityContextPersistenceFilter@14fded9d,
+        org.springframework.security.web.header.HeaderWriterFilter@67774e29,
+        org.springframework.security.web.csrf.CsrfFilter@303c55fa,
+        org.springframework.security.web.authentication.logout.LogoutFilter@9e54c59,
+        org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@72eb6200,
+        org.springframework.security.web.authentication.www.BasicAuthenticationFilter@21a9a705,
+        org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a3bd45b,
+        org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27df95e,
+        org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77fa9381,
+        org.springframework.security.web.session.SessionManagementFilter@5d7399f9,
+        org.springframework.security.web.access.ExceptionTranslationFilter@60bb7995,
+        org.springframework.security.web.access.intercept.FilterSecurityInterceptor@d2e6b0b
+    ]
+    ```
 
 
 

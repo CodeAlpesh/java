@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.Authentication;
@@ -25,20 +27,18 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 //@Configuration
 //public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 //	
-////  @Autowired
-////  public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-////      auth
-////      	.inMemoryAuthentication()
-////      		.withUser("user").password("{noop}password").roles("USER").and()
-////      		.withUser("admin").password("{noop}password").roles("USER", "ADMIN");
-////  }
+//	@Autowired
+//	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+//		auth
+//			.inMemoryAuthentication()
+//		    	.withUser("user").password("{noop}password").roles("USER").and()
+//		      	.withUser("admin").password("{noop}password").roles("USER", "ADMIN");
+//	}
 //	
 //	@Override
 //	protected void configure(HttpSecurity http) throws Exception {
@@ -60,12 +60,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 //						.loginProcessingUrl("/api/login")
 //						.successHandler(new AppAuthSuccessHandler())
 //						.failureHandler(new AppAuthFailureHandler())
-//					.and()
-//						.exceptionHandling()
-//							.authenticationEntryPoint(new AppAuthExceptionEntryPoint())
-//					.and()
-//						.csrf()
-//							.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
+//				.and()
+//					.logout()
+//						.addLogoutHandler(new AppLogoutHandler())
+//				.and()
+//					.exceptionHandling()
+//						.authenticationEntryPoint(new AppAuthExceptionEntryPoint())
+//				.and()
+//					.csrf()
+//						.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
 //				
 //	}
 //}

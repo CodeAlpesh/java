@@ -320,13 +320,18 @@ How do I scale horizontally?
 * **Issue:**
     * App is protected by forms-login. Need to protect public APIs. API are accesible as `/api/**`. FrontEnd (Angular app) is also using these apis (/api/login, /api/resource) etc. Other clients can also use this apis authenticated using basic auth.  
     * **Solution:**
-    * Configure basic and forms login in same WebSecurityConfigurerAdapter class.   
+    * Configure basic and forms login in same WebSecurityConfigurerAdapter class. 
+    * Check [MultipleAuthBasicAndFormsLogin.MD](./MultipleAuthBasicAndFormsLogin.MD) for detailed notes
     
 
 * Notes
     * Also configure loginProcessing URL as `/api/...` so that:
         * In dev mode when app is run by angular using proxy, login will still continue to work single consistent rule. **MAYBE** configure the proxy to pass `/login` and `/logout` also to server. 
-    
+
+
+
+
+
 ### WIP / TODO:
 * [Spring Security Reference](https://docs.spring.io/spring-security/site/docs/5.2.0.BUILD-SNAPSHOT/reference/htmlsingle/#)
 * [Spring Security Architecture](https://spring.io/guides/topicals/spring-security-architecture)
