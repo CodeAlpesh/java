@@ -8,21 +8,16 @@ import java.util.Map;
 
 import javax.servlet.Filter;
 
-import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
-import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;
-import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.oauth2.resource.UserInfoTokenServices;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.event.EventListener;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -53,12 +48,6 @@ public class SocialApplication extends WebSecurityConfigurerAdapter  {
 
 	@Autowired
 	private OAuth2ClientContext oauth2ClientContext;
-	
-    @Value("${encrypted.property}")
-    private String property;	
-
-    @Value("${encrypted.property2}")
-    private String property2;	
 	
 	@RequestMapping({ "/user", "/me" })
 	public Map<String, String> user(Principal principal) {
@@ -91,8 +80,7 @@ public class SocialApplication extends WebSecurityConfigurerAdapter  {
 	}
 	
 	public static void main(String[] args) {
-		new SpringApplicationBuilder(SocialApplication.class).
-		properties("jasypt.encryptor.password=password").run(args);
+		SpringApplication.run(SocialApplication.class, args);
 	}
 	
 	@Bean
@@ -146,62 +134,14 @@ public class SocialApplication extends WebSecurityConfigurerAdapter  {
 	    list.stream()
 	      .flatMap(chain -> chain.getFilters().stream()) 
 	      .forEach(filter -> System.out.println(filter.getClass()));
-	    System.out.println("---------------->" + property);
-	    System.out.println("---------------->" + property2);
-	    
-	    PooledPBEStringEncryptor encryptor1 = new PooledPBEStringEncryptor();
-	    SimpleStringPBEConfig config1 = new SimpleStringPBEConfig();
-	    config1.setPassword("password");
-	    config1.setAlgorithm("PBEWithMD5AndDES");
-	    config1.setKeyObtentionIterations("1000");
-	    config1.setPoolSize("1");
-	    config1.setProviderName("SunJCE");
-	    config1.setSaltGeneratorClassName("org.jasypt.salt.RandomSaltGenerator");
-	    config1.setStringOutputType("base64");
-	    encryptor1.setConfig(config1);
-	    m1(encryptor1, "hello");
-	    
-        PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
-        SimpleStringPBEConfig config = new SimpleStringPBEConfig();
-        config.setPassword("password");
-        config.setAlgorithm("PBEWithMD5AndDES");
-        config.setKeyObtentionIterations("1000");
-        config.setPoolSize("1");
-        config.setProviderName(null);
-        config.setProviderClassName(null);
-        config.setSaltGeneratorClassName("org.jasypt.salt.RandomSaltGenerator");
-        config.setStringOutputType("base64");
-        encryptor.setConfig(config);
-        m1(encryptor, "hello");
-        
-        StandardPBEStringEncryptor enc = new StandardPBEStringEncryptor();
-        enc.setPassword("password");
-        System.out.println("=================> " + enc.encrypt("hello"));
-        System.out.println("=================> " + enc.decrypt("YID5r+E50vvAMOKoz0iNxw=="));
-//        System.out.println("=================> " + enc.decrypt("ENC(YID5r+E50vvAMOKoz0iNxw==)"));
-        
 	}
 // ---- 
-
-	private void m1(PooledPBEStringEncryptor encryptor, String message) {
-		String encrypt1 = encryptor.encrypt(message);
-	    String encrypt2 = encryptor.encrypt(message);
-	    String encrypt3 = encryptor.encrypt(message);
-		System.out.println(encrypt1 + ":" + encryptor.decrypt(encrypt1));
-		System.out.println(encrypt2 + ":" + encryptor.decrypt(encrypt2));
-		System.out.println(encrypt3 + ":" + encryptor.decrypt(encrypt3));
-	}
 	 
 	@Autowired
 	@Qualifier("springSecurityFilterChain")
 	private Filter springSecurityFilterChain;
 		
-	@Configuration
-	@PropertySource("encrypted.properties")
-	public class AppConfigForJasyptStarter {
-	}	 
-	
-	
+	 
 	 
 	
 }

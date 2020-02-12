@@ -21,4 +21,44 @@ Let's manually configuring everything in there to make it explicit.
     * Step2 inject an OAuth2ClientContext - use it to build an authentication filter that we add to our security configuration
         * OAuth2ClientAuthenticationProcessingFilter
     
-    
+
+### Enabling the Authorization Server
+* Authorization Server bunch of endpoints for token validation   
+* Implemented in Spring OAuth2 as Spring MVC handlers
+* just a add the @EnableAuthorizationServer annotation
+
+```
+@Configuration
+@ConditionalOnClass(EnableAuthorizationServer.class)
+@ConditionalOnMissingBean(AuthorizationServerConfigurer.class)
+@ConditionalOnBean(AuthorizationServerEndpointsConfiguration.class)
+@EnableConfigurationProperties(AuthorizationServerProperties.class)
+public class OAuth2AuthorizationServerConfiguration
+		extends AuthorizationServerConfigurerAdapter {
+		
+		
+```
+#### How to Get an Access Token 
+##### Client credentials tokens: grant_type=client_credentials
+```
+$ curl acme:acmesecret@localhost:8080/oauth/token -d grant_type=client_credentials
+{"access_token":"dbe57c81-d59e-4bca-a507-97e3476b69bc","token_type":"bearer","expires_in":43199,"scope":"read write"}
+```
+
+##### Token for given user: grant_type=password
+* Mainly useful for testing
+* Can be appropriate for a native or mobile application, when you have a local user database to store and validate the credentials
+* User **user** is created by default in springboot security setup.
+
+```
+curl acme:acmesecret@localhost:8080/oauth/token -d grant_type=password -d username=user -d password=3e921e2b-a68b-403e-88d8-1830cad0e4ce
+{"access_token":"b183309e-058c-4038-9864-c6a3f077e434","token_type":"bearer","refresh_token":"62ba976c-b172-4c7e-b234-9cd860f05fda","expires_in":43199,"scope":"read write"}
+```
+
+##### For Social login: grant grant_type=authorization_code
+* need a browser (or a client that behaves like a browser) to handle:
+	* redirects, cookies and render the user interfaces from the external providers.
+* Need a client application .. check ClientApplication.java
+	* MUST NOT be created in the same package (or a sub-package) of the SocialApplication class. 
+	* Otherwise, Spring will load some ClientApplication auto-configurations while starting the SocialApplication server, resulting in startup errors. 
+* 

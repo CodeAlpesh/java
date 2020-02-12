@@ -1,0 +1,113 @@
+https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#multiple-httpsecurity
+
+
+The configuration creates a servlet Filter (known as the springSecurityFilterChain
+
+SecurityContextHolder 
+SecurityContextHolder.MODE_GLOBAL
+SecurityContextHolder.MODE_INHERITABLETHREADLOCAL
+SecurityContextHolder.MODE_THREADLOCAL (default)
+
+
+Authentication - Holds principle user information
+
+
+>>> to obtain the name of the currently authenticated user, for example:
+
+Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+if (principal instanceof UserDetails) {
+	String username = ((UserDetails)principal).getUsername();
+} else {
+	String username = principal.toString();
+}
+
+
+Most authentication mechanisms within Spring Security return an instance of UserDetails as the principal.
+Think of UserDetails as the adapter between your own user database and what Spring Security needs inside the SecurityContextHolder
+you will cast the UserDetails to the original object that your application provided, so you can call business-specific methods (like getEmail(), getEmployeeNumber()
+
+
+UserDetailsService {
+	UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+}
+
+
+>>> What is authentication in Spring Security?
+
+Let’s consider a standard authentication scenario that everyone is familiar with.
+
+    A user is prompted to log in with a username and password.
+    The system (successfully) verifies that the password is correct for the username.
+    The context information for that user is obtained (their list of roles and so on).
+    A security context is established for the user
+    The user proceeds, potentially to perform some operation which is potentially protected by an access control mechanism which checks the required permissions for the operation against the current security context information. 
+
+
+>>> 9.1.4 Authentication in a Web Application
+
+Now let’s explore the situation where you are using Spring Security in a web application (without web.xml security enabled). How is a user authenticated and the security context established?
+
+Consider a typical web application’s authentication process:
+
+1    You visit the home page, and click on a link.
+2    A request goes to the server, and the server decides that you’ve asked for a protected resource.
+3    As you’re not presently authenticated, the server sends back a response indicating that you must authenticate. The response will either be an HTTP response code, or a redirect to a particular web page.
+4    Depending on the authentication mechanism, your browser will either redirect to the specific web page so that you can fill out the form, or the browser will somehow retrieve your identity (via a BASIC authentication dialogue box, a cookie, a X.509 certificate etc.).
+5    The browser will send back a response to the server. This will either be an HTTP POST containing the contents of the form that you filled out, or an HTTP header containing your authentication details.
+6    Next the server will decide whether or not the presented credentials are valid. If they’re valid, the next step will happen. If they’re invalid, usually your browser will be asked to try again (so you return to step two above).
+7    The original request that you made to cause the authentication process will be retried. Hopefully you’ve authenticated with sufficient granted authorities to access the protected resource. If you have sufficient access, the request will be successful. Otherwise, you’ll receive back an HTTP error code 403, which means "forbidden". 	
+	
+ExceptionTranslationFilter is a Spring Security filter that has responsibility for detecting any Spring Security exceptions
+ExceptionTranslationFilter has responsibility of either returning error code 403 (if the principal has been authenticated and therefore simply lacks sufficient access - as per step seven above), or launching an AuthenticationEntryPoint (if the principal has not been authenticated and therefore we need to go commence step three).
+
+
+AuthenticationEntryPoint is responsible for step three in the above list.
+
+
+In a typical web application, a user logs in once and is subsequently identified by their session Id. The server caches the principal information for the duration session
+The responsibility for storing the SecurityContext between requests falls to the SecurityContextPersistenceFilter
+It restores the context to the SecurityContextHolder for each request and, crucially, clears the SecurityContextHolder when the request completes.
+
+
+Secure Objects and the AbstractSecurityInterceptor
+Secure Objects - Any object that can have security (such as an authorization decision) applied to it. The most common examples are method invocations and web requests.
+Each supported secure object type has its own interceptor class, which is a subclass of AbstractSecurityInterceptor
+
+protected void configure(HttpSecurity http) throws Exception {
+    http
+        .authorizeRequests(authorizeRequests ->                                        1
+            authorizeRequests
+                .antMatchers("/resources/**", "/signup", "/about").permitAll()         2
+                .antMatchers("/admin/**").hasRole("ADMIN")                             3
+                .antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")   4
+                .anyRequest().authenticated()                                          5
+        )
+        .formLogin(withDefaults());
+}
+
+1 There are multiple children to the http.authorizeRequests() method each matcher is considered in the order they were declared.
+
+2 We specified multiple URL patterns that any user can access. Specifically, any user can access a request if the URL starts with "/resources/", equals "/signup", or equals "/about".
+
+3 Any URL that starts with "/admin/" will be restricted to users who have the role "ROLE_ADMIN". You will notice that since we are invoking the hasRole method we do not need to specify the "ROLE_" prefix.
+
+4 Any URL that starts with "/db/" requires the user to have both "ROLE_ADMIN" and "ROLE_DBA". You will notice that since we are using the hasRole expression we do not need to specify the "ROLE_" prefix.
+
+5 Any URL that has not already been matched on only requires that the user be authenticated
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#multiple-httpsecurity
+https://dzone.com/articles/spring-security-authentication
+https://stackoverflow.com/questions/51472410/spring-security-configuring-two-different-authentication-for-two-different-url
+https://stackoverflow.com/questions/33739359/combining-basic-authentication-and-form-login-for-the-same-rest-api
+
+
+>>>>>>>>>>> Angular Springsecurity
+
+https://leaks.wanari.com/2017/11/28/how-to-make-custom-usernamepasswordauthenticationfilter-with-spring-security/
+https://medium.com/@mind_sFlight/basic-authentication-with-angular-7-and-spring-security-6fd140efc031
+https://github.com/TeamWanari/Spring-Custom-Login-Example
+https://spring.io/guides/tutorials/spring-security-and-angular-js/
+https://www.baeldung.com/spring-security-login-angular
