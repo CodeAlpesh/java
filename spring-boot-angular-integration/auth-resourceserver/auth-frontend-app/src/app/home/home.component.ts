@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   greeting:T = { id: '', content: ''};
 
   constructor(private app: AuthService, private http: HttpClient) {
-    http.get('/api/resource').subscribe((data:T) => this.greeting = data);
+    http.get('http://localhost:9000/api/resource').subscribe((data:T) => this.greeting = data);
   }
 
   ngOnInit(): void {

@@ -1,4 +1,4 @@
-package com.comp.code.controllers;
+package com.comp.code.resourceserver.controllers;
 
 import java.util.UUID;
 
