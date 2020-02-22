@@ -322,14 +322,12 @@ How do I scale horizontally?
     * **Solution:**
     * Configure basic and forms login in same WebSecurityConfigurerAdapter class. 
     * Check [MultipleAuthBasicAndFormsLogin.MD](./MultipleAuthBasicAndFormsLogin.MD) for detailed notes
-    
-
 * Notes
     * Also configure loginProcessing URL as `/api/...` so that:
         * In dev mode when app is run by angular using proxy, login will still continue to work single consistent rule. **MAYBE** configure the proxy to pass `/login` and `/logout` also to server. 
-
-
-
+* For microservices ...
+    * Using Spring-Session and Redis we can share authentication state via X-Auth-Header with microservices.
+    * Check [Spring-Security-Angular-ResourceServer-Microservices](./SpringSecurityAndAngular_P2_ResourceServer.MD)
 
 
 ### WIP / TODO:

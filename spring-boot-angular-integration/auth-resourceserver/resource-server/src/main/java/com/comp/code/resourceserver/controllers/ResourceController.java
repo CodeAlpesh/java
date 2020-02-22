@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 //@CrossOrigin(origins = "*", allowedHeaders = "*", methods= {RequestMethod.GET, RequestMethod.OPTIONS})
 public class ResourceController {
 
-	@CrossOrigin(origins = "*", allowedHeaders = "*", maxAge=30)
+	@CrossOrigin(
+		origins = "*", 
+		maxAge=30, 
+		allowedHeaders={"x-auth-token", "x-requested-with", "x-xsrf-token"}
+	)
 	@RequestMapping(value = "/api/resource", method = RequestMethod.GET)
 	public Greeting message() {
 		return new Greeting("Hello");

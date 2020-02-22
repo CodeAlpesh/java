@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class ForwardingController {
- 
+
 	@RequestMapping("/{path:[^\\.]+}/**")
-    public String forward() {
-        return "forward:/";
-    }
+	public String forward() {
+		return "forward:/";
+	}
 
 }
 
