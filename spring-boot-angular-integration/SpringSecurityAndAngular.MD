@@ -325,9 +325,13 @@ How do I scale horizontally?
 * Notes
     * Also configure loginProcessing URL as `/api/...` so that:
         * In dev mode when app is run by angular using proxy, login will still continue to work single consistent rule. **MAYBE** configure the proxy to pass `/login` and `/logout` also to server. 
-* For microservices ...
-    * Using Spring-Session and Redis we can share authentication state via X-Auth-Header with microservices.
-    * Check [Spring-Security-Angular-ResourceServer-Microservices](./SpringSecurityAndAngular_P2_ResourceServer.MD)
+
+
+## For microservices
+How to share authentication state with microservices.  
+* Using Spring-Session and distributed storage for session(Redis, RDBMS, Hazlecast etc.), the HttpSession can be shared with microservices
+    * Using Header to HttpSession strategy ... via HTTP request header `X-Auth-Header` 
+* Check [Spring-Security-Angular-ResourceServer-Microservices](./SpringSecurityAndAngular_P2_ResourceServer.MD)
 
 
 ### WIP / TODO:
