@@ -44,7 +44,7 @@ class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.authorizeRequests()
-			.antMatchers("/", "/**.js", "index.html", "**/*.ico", "/api/**")
+			.antMatchers("/", "/**.js", "index.html", "/favicon.ico")
 				.permitAll()
 			.anyRequest()
 				.authenticated()
