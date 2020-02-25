@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.comp.codename</groupId>
+	<artifactId>auth-with-api-gateway</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>springboot-angular-integration-res-server-ag</name>
+	<description>Demo project for Spring Boot formslogin and angular</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+    <modules>
+		<module>auth-frontend-ag</module>
+        <module>resource-server-ag</module>
+        <module>auth-app-ag</module>
+    </modules>
+
+</project>
